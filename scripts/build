@@ -8,6 +8,7 @@ cd $(dirname $0)/..
 mkdir -p bin
 [ "$(uname)" != "Darwin" ] && LINKFLAGS="-linkmode external -extldflags -static -s"
 
+dep ensure
 CGO_ENABLED=0 go build -ldflags "-X main.VERSION=$VERSION $LINKFLAGS" -o bin/kontainer-engine-driver-xablau
 echo built default
 for i in darwin linux
