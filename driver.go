@@ -95,7 +95,7 @@ func (d *XablauDriver) GetVersion(ctx context.Context, clusterInfo *types.Cluste
 		return nil, err
 	}
 	//
-	return nil, nil
+	return &types.KubernetesVersion{ Version:"1.16" } , nil
 }
 func (d *XablauDriver) SetVersion(ctx context.Context, clusterInfo *types.ClusterInfo, version *types.KubernetesVersion) error {
 	return errors.New("not supported")
